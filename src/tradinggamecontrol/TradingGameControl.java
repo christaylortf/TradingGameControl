@@ -14,7 +14,7 @@ public class TradingGameControl {
     
     public static void menu() {
       
-        System.out.println("=== World Trading Game ===");
+        System.out.println("\n\n=== World Trading Game ===");
         int choice = printMenu();
         
         switch(choice) {
@@ -24,9 +24,11 @@ public class TradingGameControl {
                 break;
             case 1:
                 companies.createCompany();
-                printMenu();
+                menu();
                 break;
             case 2:
+                companies.listCompanies();
+                menu();
                 break;
             case 3:
                 break;
@@ -40,9 +42,10 @@ public class TradingGameControl {
     
     public static int printMenu() {
         System.out.println("1 - Create Company");
-        System.out.println("2 - Transactions");
-        System.out.println("3 - World Bank");
-        System.out.println("4 - Status");
+        System.out.println("2 - List Companies");
+        System.out.println("3 - Transactions");
+        System.out.println("4 - World Bank");
+        System.out.println("5 - Status");
         System.out.println("0 - Exit");
         
         Scanner scan = new Scanner(System.in);

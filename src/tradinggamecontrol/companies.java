@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tradinggamecontrol;
 
 import java.util.Scanner;
@@ -13,18 +8,28 @@ import java.util.Scanner;
  */
 public class companies {
     
-    public static String companies[];
+    public static String[] companies = new String[]{"THE WORLD BANK", "Company 1", "Company 2", "Company 3", "Companny 4", "Company 5"};
     public static void createCompany() {
-        if (companies == null) {
-            String companyName = scan.string("Enter Company Name:");
-            companies[companies.length+1] = companyName;
+        for(int cnt=0;cnt<companies.length;cnt++)
+        {  
+            System.out.println(cnt + " - " + companies[cnt]);
+        }  
+        int companyNum = scan.integer("Enter company number");
+        String companyName = scan.string("Enter new Company Name");
+        if (companyNum != 0) {
+            companies[companyNum] = companyName;
+            worldBank.balances[companyNum] = 500.00;
+            System.out.println("\n================= \nCompany Number: " + companyNum);
+            System.out.println("Company Name: " + companies[companyNum] + "\n=====================");
         } else {
-            String name = scan.string("Enter Company Name");
-            companies[0] = "The World Bank";
-            companies[1] = name;
+            System.out.println("Sorry, you can't change the name of the world bank.");
         }
-        
-        
-        
+    }
+    
+    public static void listCompanies() {
+        for(int cnt=0;cnt<companies.length;cnt++)
+        {  
+            System.out.println(cnt + " - " + companies[cnt] + " - £" + worldBank.balances[cnt]);
+        } 
     }
 }

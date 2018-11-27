@@ -16,7 +16,8 @@ public class scan {
     
     public static String string(String question){
         System.out.print(question + ":");
-        return scan.nextLine();
+        String answer = scan.next();
+        return answer;
     }
     
     public static int integer(String question) {
