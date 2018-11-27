@@ -18,7 +18,7 @@ public class companies {
         String companyName = scan.string("Enter new Company Name");
         if (companyNum != 0) {
             companies[companyNum] = companyName;
-            worldBank.balances[companyNum] = 500.00;
+            worldBank.balances[companyNum] = 200.00;
             System.out.println("\n================= \nCompany Number: " + companyNum);
             System.out.println("Company Name: " + companies[companyNum] + "\n=====================");
         } else {
