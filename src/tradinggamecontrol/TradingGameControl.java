@@ -29,10 +29,14 @@ public class TradingGameControl {
                 companies.listCompanies();
                 break;
             case 3:
-                int companyNum = scan.integer("Enter company number");
-                worldBank.tax(companyNum);
+                int companyFrom = scan.integer("From company number");
+                int companyTo = scan.integer("To company number");
+                double amount = scan.Double("Enter amount £");
+                worldBank.transfer(companyTo, companyFrom, amount);
                 break;
             case 4: 
+                int companyNum = scan.integer("Enter amount to tax");
+                worldBank.tax(companyNum);
                 break;
             default:
                 System.out.println("Not a valid option. Try again.");

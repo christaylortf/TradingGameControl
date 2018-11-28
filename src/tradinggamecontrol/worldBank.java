@@ -33,7 +33,7 @@ public class worldBank {
         System.out.println("Everyone has been taxed £"+amount);
     }
     
-    public static void transaction(int companyTo, int companyFrom, double amount) {
+    public static void transfer(int companyTo, int companyFrom, double amount) {
         balances[companyFrom] -= amount;
         balances[companyTo] += amount;
         System.out.println("Transaction complete.");

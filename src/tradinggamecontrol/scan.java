@@ -24,4 +24,9 @@ public class scan {
         System.out.print(question + ":");
         return scan.nextInt();
     }
+    
+    public static double Double(String question) {
+        System.out.print(question + ":");
+        return scan.nextDouble();
+    }
 }
