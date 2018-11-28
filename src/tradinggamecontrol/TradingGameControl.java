@@ -1,6 +1,7 @@
 package tradinggamecontrol;
 
 import java.util.Scanner;
+import tradinggamecontrol.GUI.mainMenu;
 
 /**
  *
@@ -9,17 +10,25 @@ import java.util.Scanner;
 public class TradingGameControl {
 
     public static void main(String[] args) {
+        System.out.println("Use the GUI?");
+        String gui = "N"; //scan.string("Use the GUI (Y/N");
+        if (gui.equalsIgnoreCase("Y")) {
+            mainMenu mm = new mainMenu();
+            mm.show();
+        } else {
         menu();
+        }
     }
     
     public static void menu() {
       
         System.out.println("\n\n=== World Trading Game ===");
         int choice = printMenu();
-        
+
         switch(choice) {
             case 0:
                 System.out.println("Bye!");
+                core.resetPage();
                 System.exit(0);
                 break;
             case 1:
@@ -41,7 +50,7 @@ public class TradingGameControl {
             default:
                 System.out.println("Not a valid option. Try again.");
         }
-        
+        core.updatePage();
         menu();
     }
     
