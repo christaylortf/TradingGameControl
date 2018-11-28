@@ -24,28 +24,30 @@ public class TradingGameControl {
                 break;
             case 1:
                 companies.createCompany();
-                menu();
                 break;
             case 2:
                 companies.listCompanies();
-                menu();
                 break;
             case 3:
+                int companyNum = scan.integer("Enter company number");
+                worldBank.tax(companyNum);
                 break;
             case 4: 
                 break;
             default:
                 System.out.println("Not a valid option. Try again.");
-                menu();
         }
+        
+        menu();
     }
     
     public static int printMenu() {
         System.out.println("1 - Create Company");
         System.out.println("2 - List Companies");
-        System.out.println("3 - Transactions");
-        System.out.println("4 - World Bank");
-        System.out.println("5 - Status");
+        System.out.println("3 - Transfer Money");
+        System.out.println("4 - Tax All Comapnies");
+        System.out.println("5 - Add Money");
+        System.out.println("6 - Remove Money");
         System.out.println("0 - Exit");
         
         Scanner scan = new Scanner(System.in);
