@@ -10,11 +10,9 @@ import tradinggamecontrol.GUI.mainMenu;
 public class TradingGameControl {
 
     public static void main(String[] args) {
-        System.out.println("Use the GUI?");
-        String gui = "N"; //scan.string("Use the GUI (Y/N");
+        String gui = scan.string("Use the GUI (Y/N");
         if (gui.equalsIgnoreCase("Y")) {
-            mainMenu mm = new mainMenu();
-            mm.show();
+            guiController.mainMenu();
         } else {
         menu();
         }
@@ -25,6 +23,8 @@ public class TradingGameControl {
         System.out.println("\n\n=== World Trading Game ===");
         int choice = printMenu();
 
+        int accNo = 0;
+        double amount = 0.00;
         switch(choice) {
             case 0:
                 System.out.println("Bye!");
@@ -40,12 +40,22 @@ public class TradingGameControl {
             case 3:
                 int companyFrom = scan.integer("From company number");
                 int companyTo = scan.integer("To company number");
-                double amount = scan.Double("Enter amount £");
+                amount = scan.Double("Enter amount £");
                 worldBank.transfer(companyTo, companyFrom, amount);
                 break;
             case 4: 
-                int companyNum = scan.integer("Enter amount to tax");
-                worldBank.tax(companyNum);
+                amount = scan.Double("Enter amount to tax");
+                worldBank.tax(amount);
+                break;
+            case 5:
+                accNo = scan.integer("What account number");
+                double addAmount = scan.Double("Enter amount to add");
+                worldBank.add(accNo, addAmount);
+                break;
+            case 6:
+                accNo = scan.integer("What account number");
+                amount = scan.Double("Enter amount to add");
+                worldBank.add(accNo, amount);
                 break;
             default:
                 System.out.println("Not a valid option. Try again.");
